@@ -4,7 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update 
 
 RUN apt install -y --no-install-recommends \
-    curl git make cmake gcc g++ libz-dev tzdata r-base python3 python3-pip
+    curl tmux vim git make cmake gcc g++ libz-dev libidn11-dev tzdata r-base python3 python3-pip && \
+    set -o vi
 
 WORKDIR /tmp
 
