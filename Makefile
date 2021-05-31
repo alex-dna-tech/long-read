@@ -2,6 +2,7 @@
 DRIT=docker run -it --rm
 IMG=dnat4/long-read
 RUN=${DRIT} -v $(CURDIR)/course_data:/mnt ${IMG}
+OUT_DIR=out
 
 .PHONY: run
 run:
@@ -21,3 +22,6 @@ test-qc-picoqc:
 	${RUN} pycoQC -f /mnt/practicals/qc_practical/summaries/run_2/sequencing_summary.txt -o run_2.html
 	${RUN} pycoQC -f /mnt/practicals/qc_practical/summaries/run_3/sequencing_summary.txt -o run_3.html
 
+test-qc-minionqc:
+	MinIONQC.R -i /mnt/practicals/qc_practical/summaries -o minion_qc_result
+	

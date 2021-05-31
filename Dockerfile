@@ -19,7 +19,7 @@ RUN git clone https://github.com/lh3/miniasm && \
     rm -rf ../miniasm/
 
 RUN curl https://raw.githubusercontent.com/roblanf/minion_qc/master/MinIONQC.R > /usr/local/bin/MinIONQC.R && \
-    echo "RScript MinIONQC.R \$*" > /usr/local/bin/minionqc && chmod u+x /usr/local/bin/minionqc && \
+    chmod u+x /usr/local/bin/MinIONQC.R && \
     Rscript -e 'install.packages(c("data.table", "futile.logger", "ggplot2", "optparse", "plyr", "readr", "reshape2", "scales", "viridis", "yaml"))'
 
 RUN git clone https://github.com/sanger-pathogens/assembly-stats.git && \
