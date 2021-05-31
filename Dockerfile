@@ -40,10 +40,6 @@ RUN git clone https://github.com/rrwick/Porechop.git && \
     cd Porechop && python3 setup.py install && \
     rm -rf ../Porechop
 
-RUN apt install -y fastqc && \
-    sed 's/Xmx250m/Xmx2g/' /usr/bin/fastqc|sed 's/250/500/' > /tmp/fastqc && \
-    mv /tmp/fastqc /usr/local/bin && chmod ugo+x /usr/local/bin/fastqc
-
 RUN RELEASE=0.7.0 && curl -O -L https://github.com/chanzuckerberg/shasta/releases/download/${RELEASE}/shasta-Linux-${RELEASE} && \
     chmod ugo+x shasta-Linux-${RELEASE} && mv shasta-Linux-${RELEASE} /usr/local/bin/shasta
 
