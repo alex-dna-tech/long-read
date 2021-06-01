@@ -23,5 +23,5 @@ test-qc-picoqc:
 	${RUN} pycoQC -f /mnt/practicals/qc_practical/summaries/run_3/sequencing_summary.txt -o run_3.html
 
 test-qc-minionqc:
-	MinIONQC.R -i /mnt/practicals/qc_practical/summaries -o minion_qc_result
+	${RUN} MinIONQC.R -i /mnt/practicals/qc_practical/summaries -o minion_qc_result
 	
